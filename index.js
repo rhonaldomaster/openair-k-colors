@@ -15,12 +15,14 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=openair.com
 // @license      GPL-3.0-or-later
 // @match        https://koombea-inc.app.openair.com/*
+// @downloadURL https://update.greasyfork.org/scripts/482700/Koombea%20OpenAir.user.js
+// @updateURL https://update.greasyfork.org/scripts/482700/Koombea%20OpenAir.meta.js
 // ==/UserScript==
 
 const addKoombeaStyles = () => {
   const css = `:root {
     --koombea-dark-green: #00343D;
-    --koombea-green: #0BD8A2;
+    --koombea-green: #26666B;
     --white: #FFFFFF;
   }
 
@@ -143,6 +145,91 @@ const addKoombeaStyles = () => {
   .svg.noteSmall {
     filter: hue-rotate(45deg);
   }
+
+  .nav-list-wrapper[data-v-7fa901d4] {
+    background-color: #00343D !important;
+  }
+
+   .company-logo-wrapper[data-v-26227760] {
+    background-color: #00343D !important;
+  }
+
+  .company-logo-inner[data-v-26227760] {
+    width: 60px !important;
+    height: 60px !important;
+    top: 8px !important;
+    left: 8px !important;
+  }
+
+  .company-logo[data-v-26227760] {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+  }
+
+  .item-auxiliary[data-v-591c513b] {
+    background-color: #00343D !important;
+  }
+
+  .TSCellHeader {
+    background: #26666B !important;
+  }
+
+  .oa3_ui .viewFilterInline select.highlight, .oa3_ui .viewFilter select.highlight {
+    background-color: #48ABAA !important;
+  }
+
+  .resourceRowCell {
+    border-top: 1px solid rgb(229, 229, 229) !important;
+    overflow: visible !important;
+  }
+
+  #oa_view_booking_planner_envelope .GMGanttBkdOut, #oa_view_booking_planner_envelope .GMGanttBkdIn,
+  #oa_view_booking_planner_envelope .GMGanttUnvOut, #oa_view_booking_planner_envelope .GMGanttUnvIn,
+  #oa_view_booking_planner_envelope .GMGanttAvlOut, #oa_view_booking_planner_envelope .GMGanttAvlIn,
+  #oa_view_booking_planner_envelope .GMGanttHolOut, #oa_view_booking_planner_envelope .GMGanttHolIn,
+  #oa_view_booking_planner_envelope .GMGanttOvrOut, #oa_view_booking_planner_envelope .GMGanttOvrIn {
+    border-radius: 16px !important;
+    font-size: 10px !important;
+    text-align: center !important;
+    padding: 0px 1px !important;
+    text-overflow: clip !important;
+    height: 12px !important;
+    line-height: 12px !important;
+  }
+
+  #oa_view_booking_planner_envelope .GMGanttOvrOut, #oa_view_booking_planner_envelope div.GMGanttOvrIn {
+    background-color: #CC2E3B !important;
+    border-color: #CC2E3B !important;
+  }
+
+  #oa_view_booking_planner_envelope .resourceRowCell div:has(.GMGanttUnvIn),
+  #oa_view_booking_planner_envelope .resourceRowCell div:has(.GMGanttHolIn) {
+    border-right: 1px dotted rgb(178, 178, 178);
+    border-left: 1px dotted rgb(204, 204, 204);
+  }
+
+  #oa_view_booking_planner_envelope .GMGanttHolOut, #oa_view_booking_planner_envelope div.GMGanttHolIn,
+  #oa_view_booking_planner_envelope .GMGanttUnvOut, #oa_view_booking_planner_envelope div.GMGanttUnvIn,
+  #oa_view_booking_planner_envelope .resourceRowCell div:has(.GMGanttUnvIn),
+  #oa_view_booking_planner_envelope .resourceRowCell div:has(.GMGanttHolIn) {
+    background-color: rgb(242, 242, 242) !important;
+  }
+
+  #oa_view_booking_planner_envelope .resourceRowCell div:has(.GMGanttUnvIn),
+  #oa_view_booking_planner_envelope .resourceRowCell div:has(.GMGanttHolIn) {
+    border: 0 none !important;
+    text-indent: -9999px !important;
+  }
+
+  #oa_view_booking_planner_envelope .GMGanttBaseIn, #oa_view_booking_planner_envelope .GMGanttBaseOut {
+    border-radius: 4px !important;
+  }
+
+  #oa_view_booking_planner_envelope .resourceRowCell .GMGanttBoxOut {
+    height: 12px;
+    margin-top: 16px !important;
+  }
 `
 
   if (typeof GM_addStyle != 'undefined') {
@@ -158,5 +245,5 @@ const addKoombeaStyles = () => {
 };
 
 window.addEventListener('load', () => {
-  setTimeout(addKoombeaStyles, 1000);
+  addKoombeaStyles();
 });
