@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Koombea OpenAir
 // @namespace    koombea_air
-// @version      0.1
+// @version      0.2
 // @description  Change open air colors
 // @author       rhonaldomaster
 // @compatible   chrome
@@ -184,6 +184,10 @@ const addKoombeaStyles = () => {
     overflow: visible !important;
   }
 
+  #oa_view_booking_planner_envelope .GMGanttBaseIn, #oa_view_booking_planner_envelope .GMGanttBaseOut {
+    border-radius: 4px !important;
+  }
+
   #oa_view_booking_planner_envelope .GMGanttBkdOut, #oa_view_booking_planner_envelope .GMGanttBkdIn,
   #oa_view_booking_planner_envelope .GMGanttUnvOut, #oa_view_booking_planner_envelope .GMGanttUnvIn,
   #oa_view_booking_planner_envelope .GMGanttAvlOut, #oa_view_booking_planner_envelope .GMGanttAvlIn,
@@ -220,10 +224,6 @@ const addKoombeaStyles = () => {
   #oa_view_booking_planner_envelope .resourceRowCell div:has(.GMGanttHolIn) {
     border: 0 none !important;
     text-indent: -9999px !important;
-  }
-
-  #oa_view_booking_planner_envelope .GMGanttBaseIn, #oa_view_booking_planner_envelope .GMGanttBaseOut {
-    border-radius: 4px !important;
   }
 
   #oa_view_booking_planner_envelope .resourceRowCell .GMGanttBoxOut {
