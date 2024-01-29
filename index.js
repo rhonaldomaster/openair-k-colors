@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Koombea OpenAir
 // @namespace    koombea_air
-// @version      0.2
+// @version      0.2.1
 // @description  Change open air colors
 // @author       rhonaldomaster
 // @compatible   chrome
