@@ -337,18 +337,30 @@ const addKoombeaStyles = () => {
 
 window.addEventListener('load', () => {
   addKoombeaStyles();
-  setInterval(function(){ // Converts booking % to h/d
-      var bookings = document.querySelectorAll('.GMGanttFixedIn, .GMGanttLeftIn, .GMGanttRightIn, .GMGanttBaseIn');
-      bookings.forEach(function(booking){
-          // Validates that the booking wasn't already converted and that it contains the % value
-          if(booking.innerHTML.split('h/d')[0] == booking.innerHTML && booking.innerHTML != '' && booking.innerHTML.match(/([0-9]*\.?[0-9]+)\s%/) != null){
-              var hours_per_day = Math.round((booking.innerHTML.match(/([0-9]*\.?[0-9]+)\s%/)[1]*8/100 + Number.EPSILON) * 100) / 100;
-              if(booking.innerHTML.match(/([0-9]*\.?[0-9]+)\s%/)[0] == booking.textContent) { // For allocation percentage bubbles at the top
-                  booking.innerHTML = hours_per_day + 'h/d';
-              } else { // For bookings
-                  booking.innerHTML = hours_per_day + 'h/d ' + booking.innerHTML;
-              }
-          }
-      });
-  },1000);
+  setInterval(convertBookingPercentToHD, 1000);
 });
+
+/**
+ * Converts booking % to h/d
+ */
+function convertBookingPercentToHD() {
+  const bookings = document.querySelectorAll('.GMGanttFixedIn, .GMGanttLeftIn, .GMGanttRightIn, .GMGanttBaseIn');
+  bookings.forEach((booking) => {
+    // Validates that the booking wasn't already converted and that it contains the % value
+    const bookingHTML = booking.innerHTML;
+    if (
+      bookingHTML.split('h/d')[0] == bookingHTML &&
+      bookingHTML != '' &&
+      bookingHTML.match(/([0-9]*\.?[0-9]+)\s%/) != null
+    ) {
+      const hours_per_day = Math.round(((bookingHTML.match(/([0-9]*\.?[0-9]+)\s%/)[1] * 8) / 100 + Number.EPSILON) * 100) / 100;
+      if (bookingHTML.match(/([0-9]*\.?[0-9]+)\s%/)[0] == booking.textContent) {
+        // For allocation percentage bubbles at the top
+        booking.innerHTML = hours_per_day + 'h/d';
+      } else {
+        // For bookings
+        booking.innerHTML = hours_per_day + 'h/d ' + bookingHTML;
+      }
+    }
+  });
+}
