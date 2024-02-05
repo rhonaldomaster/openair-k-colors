@@ -13,7 +13,9 @@ Colors used:
 --koombea-green: #0BD8A2;
 ```
 
-You can install it as an user style by using [Stylus](https://add0n.com/stylus.html).You can also install it as an user script by using [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/), [Tampermonkey](https://addons.mozilla.org/firefox/addon/tampermonkey/), or [Violentmonkey](https://addons.mozilla.org/firefox/addon/violentmonkey/)
+You can install it as an user style by using [Stylus](https://add0n.com/stylus.html) or [Userscripts](https://apps.apple.com/us/app/userscripts/id1463298887)(in MacOS).
+
+You can also install it as an user script by using [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/), [Tampermonkey](https://addons.mozilla.org/firefox/addon/tampermonkey/), or [Violentmonkey](https://addons.mozilla.org/firefox/addon/violentmonkey/)
 
 ## Koombea OpenAir: functions
 
