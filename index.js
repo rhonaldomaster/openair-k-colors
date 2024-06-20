@@ -46,6 +46,73 @@ function convertBookingPercentToHD() {
   });
 }
 
+/**
+ * Displays alert if the opened timesheet is in the future
+ */
+function checkForFutureTimesheets() {
+  const timesheetStart = new Date(document.querySelector('.record-title > b').innerHTML.split(' to ')[0]); //Gets timesheet's dates based on title
+  const today = new Date();
+  if(timesheetStart - today > 0) {
+    document.querySelector('.record-title > b').innerHTML += '<span class="timesheet-alert"><b class="sprites warning_orange"></b> This timesheet is for a future period!</span>';
+  }
+}
+
+/**
+ * UI add-on for bookings form to calculate hours per day
+ */
+function calculateHoursPerDay() {
+  const iframe = document.querySelector('iframe[name="Edit booking"]');
+  const isNewBooking = window.location.href.indexOf("/booking.pl") > -1 && window.location.href.indexOf("action=new") > -1;
+  var doc;
+
+  if(iframe != null) {
+    doc = iframe.contentDocument;
+  } else if(isNewBooking) {
+    doc = document;
+  }
+
+  if(doc != undefined) {
+    const bookByTable = doc.querySelector('#row_section_4 .formLabeledPair > tbody');
+    const warningContainer = doc.querySelector('.book-by__warning-text');
+
+    if(warningContainer == null) {
+      bookByTable.innerHTML += '<tr><td colspan="4">Hours per day calculator:</td><td class="book-by__hours-per-day"><input type="text" class="book-by__hours-per-day" value="0" size="12" maxlength="12"></td></tr><tr class="book-by__warning-text"><td colspan="5"><strong>Make sure to select "Percentage of time"</strong></td></tr>';
+    }
+
+    const perDayInput = doc.querySelector('input.book-by__hours-per-day');
+    const percentageInput = doc.querySelector('#row_section_4 input[name="percentage"]');
+    if(perDayInput.value != percentageInput.value * 8 / 100 && doc.activeElement != perDayInput && doc.activeElement != percentageInput) perDayInput.value = percentageInput.value * 8 / 100;
+
+    percentageInput.addEventListener('input', () => {
+      perDayInput.value = percentageInput.value * 8 / 100;
+    });
+
+    perDayInput.addEventListener('input', () => {
+      percentageInput.value = perDayInput.value * 100 / 8;
+    });
+  }
+}
+
+/**
+ * Checks the current page location
+ */
+function pageLocation(page) {
+  const location = window.location.href;
+  switch (page) {
+    case "timesheet":
+      return (location.indexOf("/timesheet.pl") > -1 && location.indexOf("timesheet_id=") > -1);
+      break;
+    case "planner":
+      return (location.indexOf("/booking.pl") > -1 && location.indexOf("_booking_layout=planner") > -1);
+      break;
+    case "booking-edit":
+      return (location.indexOf("/booking.pl") > -1 && (location.indexOf("_booking_layout=planner") > -1 || location.indexOf("action=new") > -1));
+      break;
+  }
+}
+
 window.addEventListener('load', () => {
-  setInterval(convertBookingPercentToHD, 1000);
+  if(pageLocation("timesheet")) checkForFutureTimesheets();
+  if(pageLocation("planner")) setInterval(convertBookingPercentToHD, 1000);
+  if(pageLocation("booking-edit")) setInterval(calculateHoursPerDay, 1000);
 });

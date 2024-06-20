@@ -28,6 +28,7 @@
     --koombea-booking-overbook: #CC2E3B;
     --koombea-booking-holiday: #F2F2F2;
     --koombea-booking-available: #E6E6E6;
+    --koombea-danger: #DA4F50;
     --white: #FFFFFF;
     --link: #1D979F;
     --link-hover: #14686E;
@@ -317,5 +318,20 @@
   #oa_view_booking_planner_envelope .resourceRowCell .GMGanttBoxOut {
     height: 12px;
     margin-top: 16px !important;
+  }
+
+  .timesheet-alert .sprites{
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: -1px;
+    margin-left:5px
+  }
+
+  .timesheet-alert {
+    color: var(--koombea-danger);
+  }
+
+  .book-by__warning-text td {
+    padding-top: 6px;
   }
 }
