@@ -4,7 +4,7 @@
 // @description  Add custom functionality to OpenAir website
 // @description:es Agrega funcionalidad personalizada al sitio web de OpenAir
 // @namespace    koombea_air
-// @version      0.3.0
+// @version      0.4.0
 // @author       rhonaldomaster
 // @compatible   chrome
 // @compatible   edge
