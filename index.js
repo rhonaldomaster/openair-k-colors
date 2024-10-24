@@ -50,10 +50,10 @@ function convertBookingPercentToHD() {
  * Displays alert if the opened timesheet is in the future
  */
 function checkForFutureTimesheets() {
-  const timesheetStart = new Date(document.querySelector('.record-title > b').innerHTML.split(' to ')[0]); //Gets timesheet's dates based on title
+  const timesheetStart = new Date(document.querySelector('.header-text-record-title').innerHTML.split(' to ')[0]); //Gets timesheet's dates based on title
   const today = new Date();
   if(timesheetStart - today > 0) {
-    document.querySelector('.record-title > b').innerHTML += '<span class="timesheet-alert"><b class="sprites warning_orange"></b> This timesheet is for a future period!</span>';
+    document.querySelector('.header-text-record-title').innerHTML += '<span class="timesheet-alert"><b class="svg"></b> This timesheet is for a future period!</span>';
   }
 }
 
