@@ -1,20 +1,22 @@
 /* ==UserStyle==
-@name         Koombea OpenAir styles
-@name:es      Estilos para Koombea OpenAir
-@description  Add Koombea's compatible custom styles to OpenAir website
+@name           Koombea OpenAir styles
+@name:es        Estilos para Koombea OpenAir
+@description    Add Koombea's compatible custom styles to OpenAir website
 @description:es Agrega estilos personalizados compatibles con Koombea al sitio web de OpenAir
-@namespace    koombea_air
-@version      0.3.0
-@author       rhonaldomaster
-@compatible   chrome
-@compatible   edge
-@compatible   firefox
-@compatible   opera
-@compatible   safari
-@copyright    GNU/GPL v3
-@homepage     https://github.com/rhonaldomaster/openair-k-colors
-@icon         https://www.google.com/s2/favicons?sz=64&domain=openair.com
-@license      GPL-3.0-or-later
+@namespace      koombea_air
+@version        0.4.0
+@author         rhonaldomaster
+@compatible     chrome
+@compatible     edge
+@compatible     firefox
+@compatible     opera
+@compatible     safari
+@copyright      GNU/GPL v3
+@homepage       https://github.com/rhonaldomaster/openair-k-colors
+@homepageURL    https://github.com/rhonaldomaster/openair-k-colors
+@icon           https://www.google.com/s2/favicons?sz=64&domain=openair.com
+@license        GPL-3.0-or-later
+@match          *://koombea-inc.app.openair.com/*
 ==/UserStyle== */
 @-moz-document domain("koombea-inc.app.openair.com") {
   :root {
@@ -32,6 +34,183 @@
     --white: #FFFFFF;
     --link: #1D979F;
     --link-hover: #14686E;
+  }
+
+  .item-creation,
+  .item:before {
+    background-color: var(--koombea-green) !important;
+  }
+
+  .oa3_ui .btn-oa:not(.ui3extended),
+  .oa3_ui input.vf_buttons, .oa3_ui input[type="button"]:not(.ui3extended),
+  .oa3_ui input[type="submit"]:not(.ui3extended) {
+    background-color: var(--koombea-green);
+    border-radius: 4px;
+  }
+
+  .oa3_ui .thirdLevelNavigation .tabItem.active.noLink, .oa3_ui .thirdLevelNavigation .tabItem.active a.tabLink, .oa3_ui .thirdLevelNavigation td.active>a.tabLink {
+    background: var(--koombea-green);
+    color: var(--white);
+  }
+
+  .oa3_ui .thirdLevelNavigation .tabItem.active a.tabLink:hover, .oa3_ui .thirdLevelNavigation a.tabLink:hover {
+    background: var(--koombea-dark-green);
+  }
+
+  .oa3_ui .thirdLevelNavigation a:link, .oa3_ui .thirdLevelNavigation a:visited, .oa3_ui .thirdLevelNavigation span.pagemenu span.menuAnchor {
+    color: var(--link);
+  }
+
+  .bp-toolbar-section-part .reportTypeActive {
+    border-bottom: 0 none !important;
+  }
+
+  .item-subtab.item-active,
+  .item-link:hover {
+    border-color: #dde0e3 !important;
+  }
+
+  .item-subtab {
+    border-left-color: var(--koombea-green) !important;
+  }
+
+  .nav-dialog {
+    background: var(--koombea-dark-green) !important;
+  }
+
+  .item-main.item-selected,
+  .item-main:hover,
+  .item-auxiliary:hover{
+    background: var(--koombea-green) !important;
+  }
+
+  .item-auxiliary {
+    background-color: var(--koombea-dark-green) !important;
+  }
+
+  .nav-dialog-section-header {
+    color: var(--white) !important;
+  }
+
+  .list-view-section-splitter {
+    border-right-color: var(--koombea-green) !important;
+  }
+
+  .oa3_ui a:visited, .oa3_ui a:link, .oa3_ui a:active {
+    color: var(--link);
+  }
+
+  .oa3_ui a:hover {
+    color: var(--link-hover);
+  }
+
+  .svg.checkmarkSmall {
+    background-color: var(--koombea-green);
+  }
+
+  .select-box-selected {
+    background-color: var(--koombea-green);
+    border-color: var(--koombea-green);
+  }
+
+  body.oa3_ui.timesheet #timesheet_grid table.timesheet thead th.timesheetControl,
+  body.oa3_ui.timesheet #timesheet_header table.timesheet thead th.timesheetControl,
+  body.oa3_ui.timesheet #timesheet_grid table.timesheet thead th.timesheetButton,
+  body.oa3_ui.timesheet #timesheet_header table.timesheet thead th.timesheetButton {
+    background-color: var(--koombea-green);
+  }
+
+  body.oa3_ui.timesheet #timesheet_grid table.timesheet thead th.timesheetTotal,
+  body.oa3_ui.timesheet #timesheet_header table.timesheet thead th.timesheetTotal {
+    background-color: var(--koombea-green);
+  }
+
+  .bulk-actions-active .bulk-actions-count,
+  .list-head-cell {
+    background-color: var(--koombea-green) !important;
+  }
+
+  .list-head-cell .svg {
+    filter: brightness(1.5);
+  }
+
+  .action-control-active,
+  .rc-text-wrapper-value a {
+    color: var(--koombea-green) !important;
+  }
+
+  .rc-text-wrapper-value a:hover {
+    color: var(--koombea-dark-green) !important;
+  }
+
+  .item-creation.item-selected,
+  .item-creation:hover,
+  .nav-dialog-header,
+  .sorting-control-active {
+    background-color: var(--koombea-green) !important;
+  }
+
+  .oa3_ui div.notificationEnvelopeOutside div.notificationEnvelopeInside div.notificationTitle.notificationTitleConfirm {
+    background-color: var(--koombea-green);
+    color: var(--white);
+  }
+
+  .oa3_ui #page_footer.oa3_footer {
+    background-color: var(--koombea-dark-green);
+    color: var(--white);
+  }
+
+  .oa3_ui .btn-oa:not(.ui3extended):hover,
+  .oa3_ui input.vf_buttons:hover,
+  .oa3_ui input[type="button"]:not(.ui3extended):hover,
+  .oa3_ui input[type="submit"]:not(.ui3extended):hover {
+    background-color: var(--koombea-dark-green);
+    text-shadow: none;
+  }
+
+  .oa4:not([data-is-iframe]):not(.popupWindow):not(.in_pane):not(.integratedWindow):not(.inlineWindow) .bodyIndent .noBorder tr:nth-child(2),
+  .oa4:not([data-is-iframe]):not(.popupWindow):not(.in_pane):not(.integratedWindow):not(.inlineWindow) .bodyIndent .noBorder tr:nth-child(6),
+  .oa4:not([data-is-iframe]):not(.popupWindow):not(.in_pane):not(.integratedWindow):not(.inlineWindow) .bodyIndent .noBorder td[colspan="15"] {
+    background-color: var(--koombea-green);
+    color: var(--white);
+  }
+
+  .oa4:not([data-is-iframe]):not(.popupWindow):not(.in_pane):not(.integratedWindow):not(.inlineWindow) .bodyIndent .noBorder td[colspan="15"] + td + td {
+    background-color: var(--koombea-green);
+    color: var(--white);
+  }
+
+  .column-filter-dropdown-active .inline-field-wrapper {
+    background-color: var(--koombea-dark-green);
+  }
+
+  .column-filter-dropdown-active .inline-field-wrapper {
+    background-color: var(--koombea-dark-green) !important;
+  }
+
+  .svg.checkmarkGreenMedium {
+    filter: hue-rotate(45deg);
+  }
+
+  .input-switch-input:checked+.input-switch-switch .input-switch-switch-bg-pin {
+    border-color: var(--koombea-green);
+  }
+
+  .input-switch-input:checked+.input-switch-switch {
+    background-color: var(--koombea-green);
+  }
+
+  body.oa3_ui.timesheet #timesheet_grid table.timesheet tfoot tr td.timesheetTotal, body.oa3_ui.timesheet #timesheet_header table.timesheet tfoot tr td.timesheetTotal {
+    background-color: var(--koombea-dark-green);
+    color: var(--white);
+  }
+
+  .svg.noteSmall {
+    filter: hue-rotate(45deg);
+  }
+
+  .nav-list-wrapper {
+    background-color: var(--koombea-dark-green) !important;
   }
 
   .TSCellHeader {
@@ -137,16 +316,26 @@
   }
 
   .timesheet-alert .svg {
-    vertical-align: middle;
     display: inline-block;
     width: 17px;
     height: 16px;
     background-position: -250px -486px;
     vertical-align: middle;
     margin-top: -3px;
-  }    
+  }
 
   .book-by__warning-text td {
     padding-top: 6px;
+  }
+
+  /* footer */
+  .oa3_ui #page_footer.oa3_footer {
+    background-color: var(--koombea-dark-green);
+    color: var(--white);
+  }
+
+  .footer-logo-app,
+  .footer-logo-o-ns {
+    filter: invert(1);
   }
 }
