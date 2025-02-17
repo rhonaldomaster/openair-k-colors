@@ -16,7 +16,7 @@
 // @homepage     https://github.com/rhonaldomaster/openair-k-colors
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=openair.com
 // @license      GPL-3.0-or-later
-// @match        https://koombea-inc.app.openair.com/*
+// @match        *://koombea-inc.app.netsuitesuiteprojectspro.com*
 // @downloadURL  https://update.greasyfork.org/scripts/482700/Koombea%20OpenAir.user.js
 // @updateURL    https://update.greasyfork.org/scripts/482700/Koombea%20OpenAir.meta.js
 // ==/UserScript==
