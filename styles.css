@@ -4,7 +4,7 @@
 @description    Add Koombea's compatible custom styles to OpenAir website
 @description:es Agrega estilos personalizados compatibles con Koombea al sitio web de OpenAir
 @namespace      koombea_air
-@version        0.4.0
+@version        0.5.0
 @author         rhonaldomaster
 @compatible     chrome
 @compatible     edge
@@ -16,7 +16,7 @@
 @homepageURL    https://github.com/rhonaldomaster/openair-k-colors
 @icon           https://www.google.com/s2/favicons?sz=64&domain=openair.com
 @license        GPL-3.0-or-later
-@match          *://koombea-inc.app.openair.com/*
+@match          *://koombea-inc.app.netsuitesuiteprojectspro.com*
 ==/UserStyle== */
 @-moz-document domain("koombea-inc.app.openair.com") {
   :root {
